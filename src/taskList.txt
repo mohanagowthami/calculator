@@ -1,7 +1,7 @@
 calculator task list
 calculator component
 state variable for input
-state variable for output
+state variable for eualto
 
 []inputEvaluation(method) triggering this method on clicking equal to button
 []clearInput (method) on clicking the c button
@@ -9,6 +9,9 @@ state variable for output
 
 
 components
-calculatorContainer 
-  []<Screen></Screen>
+[]calculatorContainer 
+   
+  []<Screen></Screen>  
+
+        
    []<keyPad></keyPad>
