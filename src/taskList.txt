@@ -1,0 +1,14 @@
+calculator task list
+calculator component
+state variable for input
+state variable for output
+
+[]inputEvaluation(method) triggering this method on clicking equal to button
+[]clearInput (method) on clicking the c button
+[]deleteSingleCharacter(method) on clicking the del button
+
+
+components
+calculatorContainer 
+  []<Screen></Screen>
+   []<keyPad></keyPad>
