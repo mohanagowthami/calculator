@@ -16,9 +16,7 @@ export default class KeyPad extends Component {
   };
 
   onClickOperator = e => {
-    console.log(e.target.value);
     this.props.onClickOperator(e.target.value);
-    console.log(e.target.value);
   };
   renderDisplay = () => {
     let A;
@@ -32,7 +30,7 @@ export default class KeyPad extends Component {
         </A>
       );
     });
-    //console.log(array);
+
     return array;
   };
   renderDisplayOperands = () => {

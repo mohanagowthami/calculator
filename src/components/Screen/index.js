@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import { observer } from "mobx-react";
+import { Display, PreviousInput, Input } from "./styleComponent";
 @observer
 class Screen extends Component {
   render() {
     return (
-      <div>
-        <p value={this.props.previousInput} data-testid="previousInput">
+      <Display>
+        <PreviousInput
+          value={this.props.previousInput}
+          data-testid="previousInput"
+        >
           {this.props.previousInput}
-        </p>
-        <p data-testid="input" value={this.props.input}>
+        </PreviousInput>
+        <Input data-testid="input" value={this.props.input}>
           {this.props.input}
-        </p>
-      </div>
+        </Input>
+      </Display>
     );
   }
 }

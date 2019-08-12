@@ -11,13 +11,14 @@ class CalculatorContainer extends Component {
   @observable input = "";
   onClickClear = () => {
     this.input = "";
+    this.previousInput = "";
   };
   onClickDel = () => {
     this.input = this.input.slice(0, -1);
   };
   onClickEqualsTo = () => {
     let t = this.input;
-    this.input = eval(this.input);
+    this.input = eval(this.input).toString();
     this.previousInput = t;
   };
   onClickNumber = number => {
