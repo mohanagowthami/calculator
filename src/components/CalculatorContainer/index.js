@@ -12,7 +12,9 @@ class CalculatorContainer extends Component {
   onClickClear = () => {
     this.input = "";
   };
-  onClickDel = () => {};
+  onClickDel = () => {
+    this.input = this.input.slice(0, -1);
+  };
   onClickEqualsTo = () => {};
   onClickNumber = number => {
     this.input = this.input.concat(`${number}`);
