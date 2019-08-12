@@ -49,13 +49,21 @@ export default class KeyPad extends Component {
 
     return array;
   };
-  renderDisplaySpecialButtons = () => {};
+  renderDisplaySpecialButtons = () => {
+    return (
+      <div>
+        <button onClick={this.props.onClickClear}>"C"</button>
+        <button onClick={this.props.onClickDel}>"Del"</button>
+        <button onClick={this.props.onClickEqualsTo}>"="</button>
+      </div>
+    );
+  };
 
   render() {
     return (
       <FlexContainer>
         <NumberContainer>
-          <SpecialButtons> {this.renderDisplaySpecialButtons}</SpecialButtons>
+          <SpecialButtons> {this.renderDisplaySpecialButtons()}</SpecialButtons>
           <KeypadNumbers>{this.renderDisplay()} </KeypadNumbers>
         </NumberContainer>
         <KeypadOperators>{this.renderDisplayOperands()}</KeypadOperators>
