@@ -20,4 +20,16 @@ describe(" testing the integration of keypad and screen", () => {
 
     expect(getByTestId("2*").innerHTML).toBe("");
   });
+
+  it("should test the callback,functionality of del method", () => {
+    const { getByText, getByTestId } = render(<CalculatorContainer />);
+    fireEvent.click(getByTestId("1"));
+
+    fireEvent.click(getByTestId("+"));
+    expect(getByTestId("2*").innerHTML).toBe("1+");
+
+    fireEvent.click(getByText("Del"));
+
+    expect(getByTestId("2*").innerHTML).toBe("1");
+  });
 });
