@@ -6,7 +6,9 @@ import {
   KeypadOperators,
   SingleOperator,
   SpecialButtons,
-  NumberContainer
+  NumberContainer,
+  SingleSpecialButton,
+  SingleNumberZero
 } from "./styleComponents.js";
 export default class KeyPad extends Component {
   onClickNumber = e => {
@@ -17,17 +19,15 @@ export default class KeyPad extends Component {
     this.props.onClickOperator(e.target.value);
   };
   renderDisplay = () => {
+    let A;
     let array = ["0", ".", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
     array.reverse();
     array = array.map(number => {
+      A = number == "0" ? SingleNumberZero : SingleNumber;
       return (
-        <SingleNumber
-          data-testid={number}
-          value={number}
-          onClick={this.onClickNumber}
-        >
+        <A data-testid={number} value={number} onClick={this.onClickNumber}>
           {number}
-        </SingleNumber>
+        </A>
       );
     });
     //console.log(array);
@@ -52,9 +52,15 @@ export default class KeyPad extends Component {
   renderDisplaySpecialButtons = () => {
     return (
       <div>
-        <button onClick={this.props.onClickClear}>"C"</button>
-        <button onClick={this.props.onClickDel}>"Del"</button>
-        <button onClick={this.props.onClickEqualsTo}>"="</button>
+        <SingleSpecialButton onClick={this.props.onClickClear}>
+          C
+        </SingleSpecialButton>
+        <SingleSpecialButton onClick={this.props.onClickDel}>
+          Del
+        </SingleSpecialButton>
+        <SingleSpecialButton onClick={this.props.onClickEqualsTo}>
+          =
+        </SingleSpecialButton>
       </div>
     );
   };
