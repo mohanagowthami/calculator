@@ -5,8 +5,11 @@ flex-direction:column;
 `;
 
 export const Input = styled.div`
-  font-size: 20px;
+  font-size: 40px;
 `;
 export const PreviousInput = styled.div`
   font-size: 20px;
+`;
+export const ChangedStyledInput = styled(Input)`
+  font-size: 42px;
 `;

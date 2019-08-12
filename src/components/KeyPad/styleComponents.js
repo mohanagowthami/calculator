@@ -6,10 +6,14 @@ export const SingleNumber = styled.button`
   text-align: center;
   margin-bottom: 0px;
   margin: 3px;
+  background-color: #696969;
+  color: white;
+  border: none;
 `;
 
 export const SingleNumberZero = styled(SingleNumber)`
   width: 123px;
+  border: none;
 `;
 
 export const FlexContainer = styled.div`
@@ -22,11 +26,13 @@ export const KeypadNumbers = styled.div`
   align-items: flex-end;
   flex-wrap: wrap;
   margin: 0px;
+  font-size: 20px;
 `;
 export const KeypadOperators = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  font-size: 14px;
 `;
 
 export const SingleOperator = styled.button`
@@ -35,6 +41,9 @@ export const SingleOperator = styled.button`
   border-radius: 30px;
   text-align: center;
   margin: 3px;
+  background-color: orange;
+  color: white;
+  border: none;
 `;
 
 export const SpecialButtons = styled.div`
@@ -52,4 +61,7 @@ export const SingleSpecialButton = styled.button`
   height: 60px;
   border-radius: 30px;
   margin: 3px;
+  background-color: #dcdcdc;
+  color: black;
+  border: none;
 `;

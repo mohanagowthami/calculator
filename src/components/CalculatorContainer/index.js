@@ -9,6 +9,7 @@ import { observer } from "mobx-react";
 class CalculatorContainer extends Component {
   @observable previousInput = " ";
   @observable input = "";
+
   onClickClear = () => {
     this.input = "";
     this.previousInput = "";
