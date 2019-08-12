@@ -7,13 +7,17 @@ describe(" testing the integration of keypad and screen", () => {
     const { getByText, getByTestId } = render(<CalculatorContainer />);
 
     fireEvent.click(getByTestId("1"));
-    expect(myMock).toHaveBeenCalledWith("1");
+
     fireEvent.click(getByTestId("+"));
-    expect(myMock).toHaveBeenCalledWith("+");
-    fireEvent.click(getByTestId("1"));
-    expect(myMock).toHaveBeenCalledWith("1");
-    fireEvent.click(getByText("="));
-    expect(myMock).toHaveBeenCalled();
-    expect(getByText("1+1").id).toBe(1);
+    console.log(getByTestId("2*"));
+    expect(getByTestId("2*").innerHTML).toBe("1+");
+  });
+
+  it("should test the callback,functionality of clear method", () => {
+    const { getByText, getByTestId } = render(<CalculatorContainer />);
+
+    fireEvent.click(getByText("C"));
+
+    expect(getByTestId("2*").innerHTML).toBe("");
   });
 });

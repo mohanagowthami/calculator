@@ -16,7 +16,9 @@ export default class KeyPad extends Component {
   };
 
   onClickOperator = e => {
+    console.log(e.target.value);
     this.props.onClickOperator(e.target.value);
+    console.log(e.target.value);
   };
   renderDisplay = () => {
     let A;

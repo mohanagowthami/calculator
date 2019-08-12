@@ -3,11 +3,11 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Counter from "./Counter";
-import KeyPad from "./components/KeyPad";
+import CalculatorContainer from "./components/CalculatorContainer/index";
 function App() {
   return (
     <div className="App">
-      <KeyPad />
+      <CalculatorContainer />
     </div>
   );
 }
