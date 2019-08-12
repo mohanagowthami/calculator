@@ -31,7 +31,7 @@ class CalculatorContainer extends Component {
           onClickNumber={this.onClickNumber}
           onClickClear={this.onClickClear}
           onClickDel={this.onClickDel}
-          onClickEqualsTo={this.onClickEqualsT}
+          onClickEqualsTo={this.onClickEqualsTo}
           onClickOperator={this.onClickOperator}
         />
       </Calculator>

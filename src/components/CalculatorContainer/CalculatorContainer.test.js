@@ -1,5 +1,5 @@
 import CalculatorContainer from "./index";
-import React, { Component } from "react";
+import React from "react";
 
 import { render, fireEvent, cleanup } from "@testing-library/react";
 describe(" testing the integration of keypad and screen", () => {
@@ -9,8 +9,8 @@ describe(" testing the integration of keypad and screen", () => {
     fireEvent.click(getByTestId("1"));
 
     fireEvent.click(getByTestId("+"));
-    console.log(getByTestId("2*"));
-    expect(getByTestId("2*").innerHTML).toBe("1+");
+    console.log(getByTestId("input"));
+    expect(getByTestId("input").innerHTML).toBe("1+");
   });
 
   it("should test the callback,functionality of clear method", () => {
@@ -18,18 +18,15 @@ describe(" testing the integration of keypad and screen", () => {
 
     fireEvent.click(getByText("C"));
 
-    expect(getByTestId("2*").innerHTML).toBe("");
+    expect(getByTestId("input").innerHTML).toBe("");
   });
 
   it("should test the callback,functionality of del method", () => {
     const { getByText, getByTestId } = render(<CalculatorContainer />);
     fireEvent.click(getByTestId("1"));
-
     fireEvent.click(getByTestId("+"));
-    expect(getByTestId("2*").innerHTML).toBe("1+");
-
+    expect(getByTestId("input").innerHTML).toBe("1+");
     fireEvent.click(getByText("Del"));
-
-    expect(getByTestId("2*").innerHTML).toBe("1");
+    expect(getByTestId("input").innerHTML).toBe("1");
   });
 });
