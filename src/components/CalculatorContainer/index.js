@@ -21,10 +21,10 @@ class CalculatorContainer extends Component {
     let t = this.input;
     try {
       this.input = eval(this.input).toString();
+      this.previousInput = t;
     } catch {
       alert("please , check the input");
     }
-    this.previousInput = t;
   };
 
   onClickNumber = number => {
