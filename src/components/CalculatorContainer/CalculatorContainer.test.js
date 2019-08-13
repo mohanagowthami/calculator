@@ -40,4 +40,16 @@ describe(" testing the integration of keypad and screen", () => {
     expect(getByTestId("input").innerHTML).toBe("2");
     expect(getByTestId("previousInput").innerHTML).toBe("1+1");
   });
+  it("generating error message for incorrect user input", () => {
+    const myMock = jest.fn();
+
+    const { getByText, getByTestId } = render(
+      <CalculatorContainer onClickequ={myMock} />
+    );
+    fireEvent.click(getByTestId("1"));
+    fireEvent.click(getByTestId("+"));
+
+    expect(getByTestId("input").innerHTML).toBe("1+");
+    expect(myMock).toHaveBeenCalledWith(0);
+  });
 });
