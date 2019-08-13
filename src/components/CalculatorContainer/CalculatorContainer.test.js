@@ -41,15 +41,15 @@ describe(" testing the integration of keypad and screen", () => {
     expect(getByTestId("previousInput").innerHTML).toBe("1+1");
   });
   it("generating error message for incorrect user input", () => {
-    const myMock = jest.fn();
+    window.alert = jest.fn();
 
-    const { getByText, getByTestId } = render(
-      <CalculatorContainer onClickequ={myMock} />
-    );
+    const { getByText, getByTestId } = render(<CalculatorContainer />);
     fireEvent.click(getByTestId("1"));
-    fireEvent.click(getByTestId("+"));
 
+    fireEvent.click(getByTestId("+"));
     expect(getByTestId("input").innerHTML).toBe("1+");
-    expect(myMock).toHaveBeenCalledWith(0);
+    fireEvent.click(getByText("="));
+
+    expect(window.alert).toHaveBeenCalled();
   });
 });

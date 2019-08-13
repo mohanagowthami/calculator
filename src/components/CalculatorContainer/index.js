@@ -19,9 +19,14 @@ class CalculatorContainer extends Component {
   };
   onClickEqualsTo = () => {
     let t = this.input;
-    this.input = eval(this.input).toString();
-    this.previousInput = t;
+    try {
+      this.input = eval(this.input).toString();
+      this.previousInput = t;
+    } catch {
+      alert("please , check the input");
+    }
   };
+
   onClickNumber = number => {
     this.input = this.input.concat(`${number}`);
   };
