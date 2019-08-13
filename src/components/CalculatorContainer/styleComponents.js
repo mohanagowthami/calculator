@@ -4,7 +4,5 @@ export const Calculator = styled.div`
   flex-direction: column;
   background-color: black;
   color: white;
-  width: 500px;
-  align-items: center;
-  justify-content: center;
+  padding: 30px;
 `;

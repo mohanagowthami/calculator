@@ -6,7 +6,7 @@ import Counter from "./Counter";
 import CalculatorContainer from "./components/CalculatorContainer/index";
 function App() {
   return (
-    <div>
+    <div className="totalContainer">
       <CalculatorContainer />
     </div>
   );

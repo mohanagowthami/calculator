@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+.totalContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
